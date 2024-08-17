@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 // import { CurrencyContext } from "../../context/CurrencyContext";
 import currencyStore from '../../state/store';
 import { useNavigate } from "react-router-dom";
+import PageLoader from "../PageLoader/PageLoader";
 function CoinTable() {
 
     const { currency } = currencyStore();
@@ -25,6 +26,10 @@ function CoinTable() {
 
     if(isError) {
         return <div>Error: {error.message}</div>;
+    }
+
+    if(isLoading) {
+        return <PageLoader />
     }
     
     return (
@@ -53,7 +58,7 @@ function CoinTable() {
                             <div className="flex items-center justify-start gap-3 basis-[35%]">
 
                                 <div className="w-[5rem] h-[5rem]">
-                                    <img src={coin.image} className="w-full h-full" />
+                                    <img src={coin.image} className="w-full h-full" loading="lazy"/>
                                 </div>
 
                                 <div className="flex flex-col"> 
