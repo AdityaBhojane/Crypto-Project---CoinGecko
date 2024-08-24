@@ -8,7 +8,7 @@ const Home = lazy(() => import('../../pages/Home'));
 const CoinDetailsPage = lazy(() => import('../../pages/CoinDetailsPage'));
 
 function Routing() {
-
+    
     return (
         <CustomErrorBoundary>
             <Routes>

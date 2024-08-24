@@ -6,7 +6,7 @@ import currencyStore from '../../state/store';
 import { useNavigate } from "react-router-dom";
 import PageLoader from "../PageLoader/PageLoader";
 function CoinTable() {
-
+    
     const { currency } = currencyStore();
 
     const navigate = useNavigate();
